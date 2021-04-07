@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="第一章概率论基本知识1.基本概念： 随机试验特点、样本空间、样本点、随机事件定义1.1（基本事件定义1.2、必然事件、不可能事件） 事件的关系（包含、相等、和事件、积事件、差事件、互斥、互逆&#x2F;互补） 事件的运算交换律结合律分配率对偶律 频率、概率、条件概率、全概率公式1.1、贝叶斯公式1.2 事件的独立性1.3  2.随机变量及其分布： 随机变量定义2.1、分布律、分布函数充要条件 常见离散型分布">
+<meta property="og:type" content="article">
+<meta property="og:title" content="概率论基础知识">
+<meta property="og:url" content="http://example.com/2021/04/07/%E7%AC%AC%E4%B8%80%E7%AB%A0%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="第一章概率论基本知识1.基本概念： 随机试验特点、样本空间、样本点、随机事件定义1.1（基本事件定义1.2、必然事件、不可能事件） 事件的关系（包含、相等、和事件、积事件、差事件、互斥、互逆&#x2F;互补） 事件的运算交换律结合律分配率对偶律 频率、概率、条件概率、全概率公式1.1、贝叶斯公式1.2 事件的独立性1.3  2.随机变量及其分布： 随机变量定义2.1、分布律、分布函数充要条件 常见离散型分布">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-04-07T09:08:01.000Z">
+<meta property="article:modified_time" content="2021-04-07T11:12:50.398Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2021/04/07/%E7%AC%AC%E4%B8%80%E7%AB%A0%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>概率论基础知识 | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/07/%E7%AC%AC%E4%B8%80%E7%AB%A0%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          概率论基础知识
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-04-07 17:08:01 / Modified: 19:12:50" itemprop="dateCreated datePublished" datetime="2021-04-07T17:08:01+08:00">2021-04-07</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="第一章概率论基本知识"><a href="#第一章概率论基本知识" class="headerlink" title="第一章概率论基本知识"></a>第一章概率论基本知识</h3><h5 id="1-基本概念："><a href="#1-基本概念：" class="headerlink" title="1.基本概念："></a>1.基本概念：</h5><ul>
+<li>随机试验<sup><a href="#fn_特点" id="reffn_特点">特点</a></sup>、样本空间、样本点、随机事件<sup><a href="#fn_定义1.1" id="reffn_定义1.1">定义1.1</a></sup>（基本事件<sup><a href="#fn_定义1.2" id="reffn_定义1.2">定义1.2</a></sup>、必然事件、不可能事件）</li>
+<li>事件的关系（包含、相等、和事件、积事件、差事件、互斥、互逆/互补）</li>
+<li>事件的运算<sup><a href="#fn_交换律" id="reffn_交换律">交换律</a></sup><sup><a href="#fn_结合律" id="reffn_结合律">结合律</a></sup><sup><a href="#fn_分配率" id="reffn_分配率">分配率</a></sup><sup><a href="#fn_对偶律" id="reffn_对偶律">对偶律</a></sup></li>
+<li>频率、概率、条件概率、全概率公式<sup><a href="#fn_1.1" id="reffn_1.1">1.1</a></sup>、贝叶斯公式<sup><a href="#fn_1.2" id="reffn_1.2">1.2</a></sup></li>
+<li>事件的独立性<sup><a href="#fn_1.3" id="reffn_1.3">1.3</a></sup></li>
+</ul>
+<h5 id="2-随机变量及其分布："><a href="#2-随机变量及其分布：" class="headerlink" title="2.随机变量及其分布："></a>2.随机变量及其分布：</h5><ul>
+<li>随机变量<sup><a href="#fn_定义2.1" id="reffn_定义2.1">定义2.1</a></sup>、分布律、分布函数<sup><a href="#fn_充要条件" id="reffn_充要条件">充要条件</a></sup></li>
+<li>常见离散型分布：0-1分布<sup><a href="#fn_分布律1" id="reffn_分布律1">分布律1</a></sup><sup><a href="#fn_期望1" id="reffn_期望1">期望1</a></sup><sup><a href="#fn_方差1" id="reffn_方差1">方差1</a></sup>、二项分布<sup><a href="#fn_分布律2" id="reffn_分布律2">分布律2</a></sup><sup><a href="#fn_期望2" id="reffn_期望2">期望2</a></sup><sup><a href="#fn_方差2" id="reffn_方差2">方差2</a></sup>、泊松分布<sup><a href="#fn_分布律3" id="reffn_分布律3">分布律3</a></sup><sup><a href="#fn_期望3" id="reffn_期望3">期望3</a></sup><sup><a href="#fn_方差3" id="reffn_方差3">方差3</a></sup>、几何分布<sup><a href="#fn_分布律4" id="reffn_分布律4">分布律4</a></sup><sup><a href="#fn_期望4" id="reffn_期望4">期望4</a></sup><sup><a href="#fn_方差4" id="reffn_方差4">方差4</a></sup></li>
+<li>概率密度函数$f(t)$，连续性随机变量分布函数:$F(x)=P(X\leq x)=\int^x_\infty f(t)dt$</li>
+<li>连续性随机变量常见分布：均匀分布<sup><a href="#fn_密度函数1" id="reffn_密度函数1">密度函数1</a></sup><sup><a href="#fn_期望5" id="reffn_期望5">期望5</a></sup><sup><a href="#fn_方差5" id="reffn_方差5">方差5</a></sup>、正态分布<sup><a href="#fn_密度函数2" id="reffn_密度函数2">密度函数2</a></sup><sup><a href="#fn_期望6" id="reffn_期望6">期望6</a></sup><sup><a href="#fn_方差6" id="reffn_方差6">方差6</a></sup>、指数分布<sup><a href="#fn_密度函数3" id="reffn_密度函数3">密度函数3</a></sup><sup><a href="#fn_分布" id="reffn_分布">分布</a></sup><sup><a href="#fn_期望7" id="reffn_期望7">期望7</a></sup><sup><a href="#fn_方差7" id="reffn_方差7">方差7</a></sup></li>
+<li>随机变量的分布</li>
+</ul>
+<h5 id="3-二维随机变量及其分布"><a href="#3-二维随机变量及其分布" class="headerlink" title="3.二维随机变量及其分布"></a>3.二维随机变量及其分布</h5><ul>
+<li>联合分布函数、联合分布律、联合分布密度</li>
+<li>随机变量的独立性</li>
+</ul>
+<h5 id="4-数字特征"><a href="#4-数字特征" class="headerlink" title="4.数字特征"></a>4.数字特征</h5><ul>
+<li>期望（若X,Y独立，则$E(XY)=E(X)E(Y)$、方差($D(X)=E(X^2)-(E(X))^2$)、重要分布的期望与方差</li>
+<li>协方差<sup><a href="#fn_定义" id="reffn_定义">定义</a></sup><sup><a href="#fn_性质" id="reffn_性质">性质</a></sup>、相关系数</li>
+</ul>
+<h5 id="5-大数定理与中心极限定理"><a href="#5-大数定理与中心极限定理" class="headerlink" title="5.大数定理与中心极限定理"></a>5.大数定理与中心极限定理</h5><ul>
+<li>大数定理</li>
+<li>中心极限定理</li>
+</ul>
+<blockquote id="fn_特点">
+<sup>特点</sup>. （1）可重复性：试验在相同条件下可重复进行；（2）可知性：每次试验的可能结果不止一个，并且事先能明确试验所有可能的结果；（3）不确定性：进行一次试验之前不能确定哪一个结果会出现，但必然会出现结果中的一个。<a href="#reffn_特点" title="Jump back to footnote [特点] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_定义1.1">
+<sup>定义1.1</sup>. 样本中的某个子集。<a href="#reffn_定义1.1" title="Jump back to footnote [定义1.1] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_定义1.2">
+<sup>定义1.2</sup>. 只包含一个样本点的事件。<a href="#reffn_定义1.2" title="Jump back to footnote [定义1.2] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_交换律">
+<sup>交换律</sup>. $A\cup B = B \cup A,AB=BA$<a href="#reffn_交换律" title="Jump back to footnote [交换律] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_结合律">
+<sup>结合律</sup>. $(A\cup B)\cup C=A\cup (B\cup C),(AB)C=A(BC)$<a href="#reffn_结合律" title="Jump back to footnote [结合律] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_分配率">
+<sup>分配率</sup>. $(A\cup B)C=(AC)\cup (BC),(AB)\cup C=(A\cup C)(B\cup C)$<a href="#reffn_分配率" title="Jump back to footnote [分配率] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_对偶律">
+<sup>对偶律</sup>. $\overline{A\cup B} = \overline{A}\cap \overline{B},\overline{A\cap B} = \overline{A}\cup \overline{B}$<a href="#reffn_对偶律" title="Jump back to footnote [对偶律] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_1.1">
+<sup>1.1</sup>. $P(B)=\sum_{i=1}^nP(A_i)P(B|A_i)$<a href="#reffn_1.1" title="Jump back to footnote [1.1] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_1.2">
+<sup>1.2</sup>. $P(A_m|B)=\frac{P(B|A_m)P(A_m)}{\sum^n_{i=1}P(A_i)P(B|A_i)}$<a href="#reffn_1.2" title="Jump back to footnote [1.2] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_1.3">
+<sup>1.3</sup>. $P(AB)=P(A)P(B)$<a href="#reffn_1.3" title="Jump back to footnote [1.3] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_定义2.1">
+<sup>定义2.1</sup>. 定义域为随机事件，值域为实数的变量，即将随机事件用数字表示。<a href="#reffn_定义2.1" title="Jump back to footnote [定义2.1] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_分布律1">
+<sup>分布律1</sup>. $P(X=K)=P^k(1-P)^{1-k},k=0,1$<a href="#reffn_分布律1" title="Jump back to footnote [分布律1] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_分布律2">
+<sup>分布律2</sup>. $P(X=K)=C^k_np^kq^{n-k},k=0,1,2,\cdots,n$<a href="#reffn_分布律2" title="Jump back to footnote [分布律2] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_分布律3">
+<sup>分布律3</sup>. $P(X=K)=\frac{\lambda^k}{k!}e^{-\lambda},k=0,1,2,\cdots$<a href="#reffn_分布律3" title="Jump back to footnote [分布律3] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_分布律4">
+<sup>分布律4</sup>. $P(x=k)=(1-p)^{k-1}p=q^{k-1}p,k=1,2,3,\cdots$<a href="#reffn_分布律4" title="Jump back to footnote [分布律4] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_充要条件">
+<sup>充要条件</sup>. 1、单调不减。2、归一性。3、右连续性。<a href="#reffn_充要条件" title="Jump back to footnote [充要条件] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_密度函数1">
+<sup>密度函数1</sup>. <script type="math/tex">f(x)=\begin{cases}&\frac{1}{b-a},&a<x<b\\\\&0,&其他 \end{cases}</script><a href="#reffn_密度函数1" title="Jump back to footnote [密度函数1] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_密度函数2">
+<sup>密度函数2</sup>. $f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}},x\in(-\infty,+\infty)$,$x=\mu+\sigma$处有拐点<a href="#reffn_密度函数2" title="Jump back to footnote [密度函数2] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_密度函数3">
+<sup>密度函数3</sup>. $f(x)=\begin{cases} &amp;\frac{1}{\theta}e^{-\frac{x}{\theta}} &amp; x&gt;0 \\\ &amp;0 &amp; x\leq0 \end{cases}$<a href="#reffn_密度函数3" title="Jump back to footnote [密度函数3] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_分布">
+<sup>分布</sup>. $F(x)=P(X\leq x)=\int^x_\infty f(t)dt=\begin{cases} &amp;1-e^{-\frac{x}{\theta}}&amp;x&gt;0 \ &amp;0 &amp; x\leq0 \end{cases} $<a href="#reffn_分布" title="Jump back to footnote [分布] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_期望1">
+<sup>期望1</sup>. $E(X)=p$<a href="#reffn_期望1" title="Jump back to footnote [期望1] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_方差1">
+<sup>方差1</sup>. $D(X)=p(1-p)$<a href="#reffn_方差1" title="Jump back to footnote [方差1] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_期望2">
+<sup>期望2</sup>. $E(X)=np$<a href="#reffn_期望2" title="Jump back to footnote [期望2] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_方差2">
+<sup>方差2</sup>. $D(X)=npq$<a href="#reffn_方差2" title="Jump back to footnote [方差2] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_方差3">
+<sup>方差3</sup>. $D(X)=\lambda$<a href="#reffn_方差3" title="Jump back to footnote [方差3] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_期望4">
+<sup>期望4</sup>. $E(X)=\frac1p$<a href="#reffn_期望4" title="Jump back to footnote [期望4] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_方差4">
+<sup>方差4</sup>. $D(X)=\frac{1-p}{p^2}$<a href="#reffn_方差4" title="Jump back to footnote [方差4] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_期望3">
+<sup>期望3</sup>. $E(X)=\lambda$<a href="#reffn_期望3" title="Jump back to footnote [期望3] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_期望5">
+<sup>期望5</sup>. $E(X)=\frac{a+b}{2}$<a href="#reffn_期望5" title="Jump back to footnote [期望5] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_方差5">
+<sup>方差5</sup>. $D(X)=\frac{(b-a)^2}{12}$<a href="#reffn_方差5" title="Jump back to footnote [方差5] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_期望6">
+<sup>期望6</sup>. $E(X)=\mu$<a href="#reffn_期望6" title="Jump back to footnote [期望6] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_方差6">
+<sup>方差6</sup>. $D(X)=\sigma^2$<a href="#reffn_方差6" title="Jump back to footnote [方差6] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_期望7">
+<sup>期望7</sup>. $E(X)=\theta$<a href="#reffn_期望7" title="Jump back to footnote [期望7] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_方差7">
+<sup>方差7</sup>. $D(X)=\theta^2$<a href="#reffn_方差7" title="Jump back to footnote [方差7] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_定义">
+<sup>定义</sup>. $Cov(X,Y)=E\{[X-E(X)][Y-E(Y)]\}=E(XY)-E(X)E(Y)$<a href="#reffn_定义" title="Jump back to footnote [定义] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_性质">
+<sup>性质</sup>. $\begin{cases}D(X+Y)=D(X)+D(Y)+2Cov(X,Y)\\D(X-Y)=D(X)+D(Y)-2Cov(X,Y)\end{cases}$<a href="#reffn_性质" title="Jump back to footnote [性质] in the text."> &#8617;</a>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2021/04/07/%E7%AC%AC%E4%BA%8C%E7%AB%A0%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" rel="next" title="数理统计基本概念">
+      数理统计基本概念 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86"><span class="nav-number">1.</span> <span class="nav-text">第一章概率论基本知识</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%EF%BC%9A"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.基本概念：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83%EF%BC%9A"><span class="nav-number">1.0.2.</span> <span class="nav-text">2.随机变量及其分布：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-%E4%BA%8C%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83"><span class="nav-number">1.0.3.</span> <span class="nav-text">3.二维随机变量及其分布</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81"><span class="nav-number">1.0.4.</span> <span class="nav-text">4.数字特征</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-%E5%A4%A7%E6%95%B0%E5%AE%9A%E7%90%86%E4%B8%8E%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86"><span class="nav-number">1.0.5.</span> <span class="nav-text">5.大数定理与中心极限定理</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
