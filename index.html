@@ -190,7 +190,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-04-07 17:09:01 / Modified: 20:44:03" itemprop="dateCreated datePublished" datetime="2021-04-07T17:09:01+08:00">2021-04-07</time>
+              <time title="Created: 2021-04-07 17:09:01 / Modified: 21:34:45" itemprop="dateCreated datePublished" datetime="2021-04-07T17:09:01+08:00">2021-04-07</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -229,52 +229,14 @@
       
           <h3 id="数理统计的基本概念"><a href="#数理统计的基本概念" class="headerlink" title="数理统计的基本概念"></a>数理统计的基本概念</h3><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><h5 id="定义1-数理统计"><a href="#定义1-数理统计" class="headerlink" title="定义1  数理统计"></a>定义1  数理统计</h5><p>数理统计是研究如何科学有效的收集、整理和分析受随机因素影响的数据，并做出推断或预测，为决策和行动提供依据或建议的学科</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">graph LR;</span><br><span class="line">A(收集数据)--&gt;B(整理数据)--&gt;C(统计推断)</span><br></pre></td></tr></table></figure>
-<h5 id="定义2-总体与个体"><a href="#定义2-总体与个体" class="headerlink" title="定义2 总体与个体"></a>定义2 总体与个体</h5><p>所研究对象的全体组成的集合称为总体。组成总体的每个元素称为个体。确切的说，可以把所研究对象的某项数据指标取值的全体作为<strong>总体</strong>，把每个数值作为<strong>个体</strong>。</p>
-<ul>
-<li>代表总体的数量是一个随机变量，记为X。</li>
-<li>不必区分总体和随机变量。</li>
-</ul>
-<h5 id="定义3-参数空间"><a href="#定义3-参数空间" class="headerlink" title="定义3 参数空间"></a>定义3 参数空间</h5><p>设随机变量X的概率函数或概率密度函数为$f(x,\theta)$，其中参数$\theta$未知。把参数$theta$的所有可能取值组成的集合称为<strong>参数空间</strong>，记作$\Theta$。</p>
-<h5 id="定义4-样本与随机变量"><a href="#定义4-样本与随机变量" class="headerlink" title="定义4 样本与随机变量"></a>定义4 样本与随机变量</h5><p>总体的任何一个子集合，称为从总体中抽取的<strong>样本</strong>，样本中包含个体的数目称为样本容量，通常记为$n$。</p>
-<p><strong>从总体中抽取容量为$n$的样本</strong>，就是对代表总体的随机变量$X$<strong>随机地、独立地</strong>进行观察，每次观察结果可以看做是y一个<strong>随机变量</strong>，$n$次观察结果就是$n$个随机变量，分别用$X_1,\cdots,X_n$表示，则样本$(X_1,\cdots,X_n)$是$n$维随机变量。</p>
-<p>样本$(X_1,\cdots,X_n)$的所有可能取值构成的集合称为样本空间，记为$W=｛(X_1，X_2，\cdots,X_n)｝$。当n次观察结果一经完成就得到一组实数，用$x_1,\cdots,×_n$表示，称这组实数为样本的一组<strong>观察值</strong>。$(x_1,\cdots,x_n)$是n维空间上的一个点，也可看做一随机试验的一个结果，且$(x_1,\cdots,x_n)\in W$。</p>
-<p><strong>简单随机抽样:</strong></p>
-<ul>
-<li><p>随机性:指总体中每个个体被抽到的概率是相等的，使样本具有充分的代表性。</p>
-</li>
-<li><p>独立性:由于$X_1,\cdots,X_n$是对随机变量X观察的结果，且各次观察是在相同条件下独立地进行，即认为$X_1,\cdots,X_n$是相互独立的随机变量。</p>
-</li>
-<li><p>同分布性:设总体$X$的分布函数为$F(x)$，样本$X_1,\cdots,X_n$中各随机变量与总体同分布，且分布函数都为$F(x)$。</p>
-</li>
-</ul>
-<h5 id="定义5-简单随机样本"><a href="#定义5-简单随机样本" class="headerlink" title="定义5 简单随机样本"></a>定义5 简单随机样本</h5><p>由简单随机抽样得到的样本为<strong>简单随机样本</strong>。</p>
-<p>若总体$X$的分布函数为$F(X)$，则样本$(X_1,\cdots,X_n)$的<strong>联合分布函数</strong>为</p>
-<script type="math/tex; mode=display">
-F(x_1,\cdots,x_n)=\prod_{i=1}^n F(x_i)</script><p>联合密度函数为：</p>
-<script type="math/tex; mode=display">
-f(x_1,\cdots,x_n)=\prod_{i=1}^n f(x_i)</script><h5 id="定义6-推断统计学"><a href="#定义6-推断统计学" class="headerlink" title="定义6 推断统计学"></a>定义6 推断统计学</h5><p><strong>推断统计学</strong>:是研究从总体中抽取随机样本，利用样本提供的信息或利用随机试验产生的数据对总体进行推断的方法。(估计理论、统计假设检验、预测和決策)。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">graph LR;</span><br><span class="line">A(总体)&#x3D;&#x3D;随机抽样&#x3D;&#x3D;&gt;B(样本)&#x3D;&#x3D;样本信息&#x3D;&#x3D;&gt;C(估计 检验 预测)&#x3D;&#x3D;以一定概率&#x3D;&#x3D;&gt;D(推断)</span><br></pre></td></tr></table></figure>
-<p>样本中包含了总体分布的信息，但是样本$(X_1,\cdots,X_n)$是$n$维随机变量，这些信息是<strong>分散</strong>到样本的每个分量上的，因此抽取样本以后，并不是直接应用样本对总体进行推断，而是把样本中我们关心的<strong>信息集中</strong>起来，针对不同的问题构造各种<strong>样本的函数</strong>，称这种函数为<strong>统计量</strong>。</p>
-<h5 id="定义7-统计量"><a href="#定义7-统计量" class="headerlink" title="定义7 统计量"></a>定义7 统计量</h5><p>设$X_1,\cdots,X_n$是来自总体$X$中的一个容量为$n$的样本，如果由</p>
-<p>样本构造一个<strong>函数</strong>$T(X_1,\cdots,X_n)$，且<strong>不含有任何未知参数</strong>，</p>
-<p>称$T(X_1,\cdots,X_n)$为统计量。</p>
-<p>可以看出，$T(X_1,\cdots,X_n)$也是一个随机变量。统计量的</p>
-<p>分布可以由样本的概率分布推导出来，称其为<strong>抽样分布</strong>。</p>
-<h5 id="定义8-常用统计量："><a href="#定义8-常用统计量：" class="headerlink" title="定义8 常用统计量："></a>定义8 常用统计量：</h5><ul>
-<li>样本均值：$\overline X = \frac1n\sum^n_{i=1}X_i$</li>
-<li>样本的k阶原点矩：$A_k=\frac1n\sum^n_{i=1}X^k_i,显然有A_1=\overline X$</li>
-<li>样本方差：$S^2=\frac1{n-1}\sum^n_{i=1}(X_i-\overline X)^2$</li>
-<li>样本标准差：$S=\sqrt{\frac1{n-1}\sum^n_{i=1}(X_i-\overline X)^2}$</li>
-<li>极大顺序统计量：$X_{(n)}=\max\{X_1,\cdots,X_n\}$</li>
-<li>极小顺序统计量：$X_{(1)}=\min\{X_1,\cdots,X_n\}$</li>
-</ul>
-<p>一般，用样本均值近似总体均值；样本方差近似总体方差；样本标准差近似总体标准差；样本k阶原点矩近似总体k阶原点矩；用极大极小次序统计量来近似总体的取值范围。</p>
-<h5 id="定理4-样本均值的期望与方差"><a href="#定理4-样本均值的期望与方差" class="headerlink" title="定理4 样本均值的期望与方差"></a>定理4 样本均值的期望与方差</h5><p>设$X_1,\cdots,X_n$是来自$X$的样本，如果X的数学期望$E[X]=\mu$和</p>
-<p>方差$D[X]=\sigma^2$存在，则样本均值$\overline X$的数学期望和方差分别</p>
-<p>为</p>
-<script type="math/tex; mode=display">
-E[\overline X]=\mu,D[\overline X]=\frac{\sigma^2}{\mu}</script><h5 id="定理5-样本方差的期望"><a href="#定理5-样本方差的期望" class="headerlink" title="定理5 样本方差的期望"></a>定理5 样本方差的期望</h5><script type="math/tex; mode=display">
-E[S^2]=\sigma^2</script><h4 id="常用的抽样分布"><a href="#常用的抽样分布" class="headerlink" title="常用的抽样分布"></a>常用的抽样分布</h4>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/04/07/%E7%AC%AC%E4%BA%8C%E7%AB%A0%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -318,7 +280,7 @@ E[S^2]=\sigma^2</script><h4 id="常用的抽样分布"><a href="#常用的抽样
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-04-07 17:08:01 / Modified: 20:44:44" itemprop="dateCreated datePublished" datetime="2021-04-07T17:08:01+08:00">2021-04-07</time>
+              <time title="Created: 2021-04-07 17:08:01 / Modified: 21:35:03" itemprop="dateCreated datePublished" datetime="2021-04-07T17:08:01+08:00">2021-04-07</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -362,134 +324,14 @@ E[S^2]=\sigma^2</script><h4 id="常用的抽样分布"><a href="#常用的抽样
 <li>频率、概率、条件概率、全概率公式<sup><a href="#fn_1.1" id="reffn_1.1">1.1</a></sup>、贝叶斯公式<sup><a href="#fn_1.2" id="reffn_1.2">1.2</a></sup></li>
 <li>事件的独立性<sup><a href="#fn_1.3" id="reffn_1.3">1.3</a></sup></li>
 </ul>
-<h5 id="2-随机变量及其分布："><a href="#2-随机变量及其分布：" class="headerlink" title="2.随机变量及其分布："></a>2.随机变量及其分布：</h5><ul>
-<li>随机变量<sup><a href="#fn_定义2.1" id="reffn_定义2.1">定义2.1</a></sup>、分布律、分布函数<sup><a href="#fn_充要条件" id="reffn_充要条件">充要条件</a></sup></li>
-<li>常见离散型分布：0-1分布<sup><a href="#fn_分布律1" id="reffn_分布律1">分布律1</a></sup><sup><a href="#fn_期望1" id="reffn_期望1">期望1</a></sup><sup><a href="#fn_方差1" id="reffn_方差1">方差1</a></sup>、二项分布<sup><a href="#fn_分布律2" id="reffn_分布律2">分布律2</a></sup><sup><a href="#fn_期望2" id="reffn_期望2">期望2</a></sup><sup><a href="#fn_方差2" id="reffn_方差2">方差2</a></sup>、泊松分布<sup><a href="#fn_分布律3" id="reffn_分布律3">分布律3</a></sup><sup><a href="#fn_期望3" id="reffn_期望3">期望3</a></sup><sup><a href="#fn_方差3" id="reffn_方差3">方差3</a></sup>、几何分布<sup><a href="#fn_分布律4" id="reffn_分布律4">分布律4</a></sup><sup><a href="#fn_期望4" id="reffn_期望4">期望4</a></sup><sup><a href="#fn_方差4" id="reffn_方差4">方差4</a></sup></li>
-<li>概率密度函数$f(t)$，连续性随机变量分布函数:$F(x)=P(X\leq x)=\int^x_\infty f(t)dt$</li>
-<li>连续性随机变量常见分布：均匀分布<sup><a href="#fn_密度函数1" id="reffn_密度函数1">密度函数1</a></sup><sup><a href="#fn_期望5" id="reffn_期望5">期望5</a></sup><sup><a href="#fn_方差5" id="reffn_方差5">方差5</a></sup>、正态分布<sup><a href="#fn_密度函数2" id="reffn_密度函数2">密度函数2</a></sup><sup><a href="#fn_期望6" id="reffn_期望6">期望6</a></sup><sup><a href="#fn_方差6" id="reffn_方差6">方差6</a></sup>、指数分布<sup><a href="#fn_密度函数3" id="reffn_密度函数3">密度函数3</a></sup><sup><a href="#fn_分布" id="reffn_分布">分布</a></sup><sup><a href="#fn_期望7" id="reffn_期望7">期望7</a></sup><sup><a href="#fn_方差7" id="reffn_方差7">方差7</a></sup></li>
-<li>随机变量的分布</li>
-</ul>
-<h5 id="3-二维随机变量及其分布"><a href="#3-二维随机变量及其分布" class="headerlink" title="3.二维随机变量及其分布"></a>3.二维随机变量及其分布</h5><ul>
-<li>联合分布函数、联合分布律、联合分布密度</li>
-<li>随机变量的独立性</li>
-</ul>
-<h5 id="4-数字特征"><a href="#4-数字特征" class="headerlink" title="4.数字特征"></a>4.数字特征</h5><ul>
-<li>期望（若X,Y独立，则$E(XY)=E(X)E(Y)$、方差($D(X)=E(X^2)-(E(X))^2$)、重要分布的期望与方差</li>
-<li>协方差<sup><a href="#fn_定义" id="reffn_定义">定义</a></sup><sup><a href="#fn_性质" id="reffn_性质">性质</a></sup>、相关系数</li>
-</ul>
-<h5 id="5-大数定理与中心极限定理"><a href="#5-大数定理与中心极限定理" class="headerlink" title="5.大数定理与中心极限定理"></a>5.大数定理与中心极限定理</h5><ul>
-<li>大数定理</li>
-<li>中心极限定理</li>
-</ul>
-<blockquote id="fn_特点">
-<sup>特点</sup>. （1）可重复性：试验在相同条件下可重复进行；（2）可知性：每次试验的可能结果不止一个，并且事先能明确试验所有可能的结果；（3）不确定性：进行一次试验之前不能确定哪一个结果会出现，但必然会出现结果中的一个。<a href="#reffn_特点" title="Jump back to footnote [特点] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_定义1.1">
-<sup>定义1.1</sup>. 样本中的某个子集。<a href="#reffn_定义1.1" title="Jump back to footnote [定义1.1] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_定义1.2">
-<sup>定义1.2</sup>. 只包含一个样本点的事件。<a href="#reffn_定义1.2" title="Jump back to footnote [定义1.2] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_交换律">
-<sup>交换律</sup>. $A\cup B = B \cup A,AB=BA$<a href="#reffn_交换律" title="Jump back to footnote [交换律] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_结合律">
-<sup>结合律</sup>. $(A\cup B)\cup C=A\cup (B\cup C),(AB)C=A(BC)$<a href="#reffn_结合律" title="Jump back to footnote [结合律] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_分配率">
-<sup>分配率</sup>. $(A\cup B)C=(AC)\cup (BC),(AB)\cup C=(A\cup C)(B\cup C)$<a href="#reffn_分配率" title="Jump back to footnote [分配率] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_对偶律">
-<sup>对偶律</sup>. $\overline{A\cup B} = \overline{A}\cap \overline{B},\overline{A\cap B} = \overline{A}\cup \overline{B}$<a href="#reffn_对偶律" title="Jump back to footnote [对偶律] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_1.1">
-<sup>1.1</sup>. $P(B)=\sum_{i=1}^nP(A_i)P(B|A_i)$<a href="#reffn_1.1" title="Jump back to footnote [1.1] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_1.2">
-<sup>1.2</sup>. $P(A_m|B)=\frac{P(B|A_m)P(A_m)}{\sum^n_{i=1}P(A_i)P(B|A_i)}$<a href="#reffn_1.2" title="Jump back to footnote [1.2] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_1.3">
-<sup>1.3</sup>. $P(AB)=P(A)P(B)$<a href="#reffn_1.3" title="Jump back to footnote [1.3] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_定义2.1">
-<sup>定义2.1</sup>. 定义域为随机事件，值域为实数的变量，即将随机事件用数字表示。<a href="#reffn_定义2.1" title="Jump back to footnote [定义2.1] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_分布律1">
-<sup>分布律1</sup>. $P(X=K)=P^k(1-P)^{1-k},k=0,1$<a href="#reffn_分布律1" title="Jump back to footnote [分布律1] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_分布律2">
-<sup>分布律2</sup>. $P(X=K)=C^k_np^kq^{n-k},k=0,1,2,\cdots,n$<a href="#reffn_分布律2" title="Jump back to footnote [分布律2] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_分布律3">
-<sup>分布律3</sup>. $P(X=K)=\frac{\lambda^k}{k!}e^{-\lambda},k=0,1,2,\cdots$<a href="#reffn_分布律3" title="Jump back to footnote [分布律3] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_分布律4">
-<sup>分布律4</sup>. $P(x=k)=(1-p)^{k-1}p=q^{k-1}p,k=1,2,3,\cdots$<a href="#reffn_分布律4" title="Jump back to footnote [分布律4] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_充要条件">
-<sup>充要条件</sup>. 1、单调不减。2、归一性。3、右连续性。<a href="#reffn_充要条件" title="Jump back to footnote [充要条件] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_密度函数1">
-<sup>密度函数1</sup>. <script type="math/tex">f(x)=\begin{cases}&\frac{1}{b-a},&a<x<b\\\\&0,&其他 \end{cases}</script><a href="#reffn_密度函数1" title="Jump back to footnote [密度函数1] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_密度函数2">
-<sup>密度函数2</sup>. $f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}},x\in(-\infty,+\infty)$,$x=\mu+\sigma$处有拐点<a href="#reffn_密度函数2" title="Jump back to footnote [密度函数2] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_密度函数3">
-<sup>密度函数3</sup>. $f(x)=\begin{cases} &amp;\frac{1}{\theta}e^{-\frac{x}{\theta}} &amp; x&gt;0 \\\ &amp;0 &amp; x\leq0 \end{cases}$<a href="#reffn_密度函数3" title="Jump back to footnote [密度函数3] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_分布">
-<sup>分布</sup>. $F(x)=P(X\leq x)=\int^x_\infty f(t)dt=\begin{cases} &amp;1-e^{-\frac{x}{\theta}}&amp;x&gt;0 \ &amp;0 &amp; x\leq0 \end{cases} $<a href="#reffn_分布" title="Jump back to footnote [分布] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_期望1">
-<sup>期望1</sup>. $E(X)=p$<a href="#reffn_期望1" title="Jump back to footnote [期望1] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_方差1">
-<sup>方差1</sup>. $D(X)=p(1-p)$<a href="#reffn_方差1" title="Jump back to footnote [方差1] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_期望2">
-<sup>期望2</sup>. $E(X)=np$<a href="#reffn_期望2" title="Jump back to footnote [期望2] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_方差2">
-<sup>方差2</sup>. $D(X)=npq$<a href="#reffn_方差2" title="Jump back to footnote [方差2] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_方差3">
-<sup>方差3</sup>. $D(X)=\lambda$<a href="#reffn_方差3" title="Jump back to footnote [方差3] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_期望4">
-<sup>期望4</sup>. $E(X)=\frac1p$<a href="#reffn_期望4" title="Jump back to footnote [期望4] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_方差4">
-<sup>方差4</sup>. $D(X)=\frac{1-p}{p^2}$<a href="#reffn_方差4" title="Jump back to footnote [方差4] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_期望3">
-<sup>期望3</sup>. $E(X)=\lambda$<a href="#reffn_期望3" title="Jump back to footnote [期望3] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_期望5">
-<sup>期望5</sup>. $E(X)=\frac{a+b}{2}$<a href="#reffn_期望5" title="Jump back to footnote [期望5] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_方差5">
-<sup>方差5</sup>. $D(X)=\frac{(b-a)^2}{12}$<a href="#reffn_方差5" title="Jump back to footnote [方差5] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_期望6">
-<sup>期望6</sup>. $E(X)=\mu$<a href="#reffn_期望6" title="Jump back to footnote [期望6] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_方差6">
-<sup>方差6</sup>. $D(X)=\sigma^2$<a href="#reffn_方差6" title="Jump back to footnote [方差6] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_期望7">
-<sup>期望7</sup>. $E(X)=\theta$<a href="#reffn_期望7" title="Jump back to footnote [期望7] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_方差7">
-<sup>方差7</sup>. $D(X)=\theta^2$<a href="#reffn_方差7" title="Jump back to footnote [方差7] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_定义">
-<sup>定义</sup>. $Cov(X,Y)=E\{[X-E(X)][Y-E(Y)]\}=E(XY)-E(X)E(Y)$<a href="#reffn_定义" title="Jump back to footnote [定义] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_性质">
-<sup>性质</sup>. $\begin{cases}D(X+Y)=D(X)+D(Y)+2Cov(X,Y)\\D(X-Y)=D(X)+D(Y)-2Cov(X,Y)\end{cases}$<a href="#reffn_性质" title="Jump back to footnote [性质] in the text."> &#8617;</a>
-</blockquote>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/04/07/%E7%AC%AC%E4%B8%80%E7%AB%A0%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
